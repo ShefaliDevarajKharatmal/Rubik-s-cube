@@ -1,4 +1,4 @@
-﻿# Importation de différentes bibliothèques
+
 from tkinter import *
 from random import *
 
