@@ -16,13 +16,13 @@ green='green'
 yellow='yellow'
 blue='blue'
 
-# Définition des listes
-CC=[]  # Cube en cours (non résolu)
-cm1=[] # Cube après le mouvement 1
+
+CC=[] 
+cm1=[]
 
 
 
-# Partie graphique :
+
 
 ag= int(input(' Enter 0 for display 2D or 1 for display 3D '))
 
@@ -40,7 +40,7 @@ fond.pack(side=LEFT)
 
 ##################################################################### FONCTIONS ############################################################################
 
-# Fonction du cube résolue
+
 
 def CubeResolue() :
     global cr,red,orange,white,green,yellow,blue,CC
@@ -59,7 +59,6 @@ CubeResolue ()
 def AfficheGraphique ():
     global a,b,x,y
 
-# Creation des faces avec des abréviation F pour face et C pour carré :
 
     F1C1=fond.create_rectangle(4*i , 1*j , 5*i , 2*j ,  outline='black' , fill=CC [0] [0] [0])
     F1C2=fond.create_rectangle(4*i , 2*j , 5*i , 3*j ,  outline='black' , fill=CC [0] [0] [1])
@@ -132,14 +131,14 @@ def AfficheGraphique ():
     F6C9=fond.create_rectangle(12*i , 6*j , 13*i , 7*j ,outline='black' , fill=CC [5] [2] [2])
 
 
-# Fonction permettant l'affichage du Rubik's Cube en 3D
+
 
 def AfficheGraphique3D ():
     
     c = 2*x
     d = 2*y
     
-# Creation des faces avec des abréviation F pour face et C pour carré :
+
 
     F1C1=fond.create_polygon(c+4.32*x ,  d+2*y ,     c+2.66*x ,  d+2.66*y , c+1*x ,    d+2*y ,    c+2.66*x ,    d+1.34*y  ,outline='black' ,  fill=CC [0] [0] [0])
     F1C2=fond.create_polygon(c+5.98*x ,  d+2.66*y ,  c+4.32*x ,  d+3.33*y , c+2.66*x , d+2.66*y , c+4.32*x ,    d+2*y     ,outline='black' ,  fill=CC [0] [0] [1])
@@ -213,7 +212,7 @@ def AfficheGraphique3D ():
 
 
     
-# Fonctions définissant les mouvements.
+# Functions movements.
 
 
 def Opt_Affichage () :
@@ -223,7 +222,7 @@ def Opt_Affichage () :
     elif ag == 1 :
         AfficheGraphique3D ()
 
-# Cette fonction effectue un mouvement vers l'avant de la première colonne.
+
 def Mvt1():
     global CC,cm1
     cm1=[[[CC[3][0][0],CC[3][0][1],CC[3][0][2]],[CC[0][1][0],CC[0][1][1],CC[0][1][2]],[CC[0][2][0],CC[0][2][1],CC[0][2][2]]], 
@@ -238,7 +237,7 @@ def Mvt1():
     Opt_Affichage ()
     
 
-# Cette fonction effectue un mouvement vers l'arrière de la première colonne.
+
 def Mvt2():
     global CC,cm2
     
@@ -252,7 +251,7 @@ def Mvt2():
 
     Opt_Affichage ()
         
-# Mvt3 correspond au mouvement vers l'avant de la 2ème colonne.
+
 def Mvt3():
     global CC,cm3
     cm3=[[[CC[0][0][0],CC[0][0][1],CC[0][0][2]],[CC[3][1][0],CC[3][1][1],CC[3][1][2]],[CC[0][2][0],CC[0][2][1],CC[0][2][2]]],
@@ -265,7 +264,6 @@ def Mvt3():
 
     Opt_Affichage ()
         
-# Mvt4 correspond au mouvement vers l'arrière de la 2ème colonne.
 
 def Mvt4():
     global CC,cm4
@@ -281,7 +279,7 @@ def Mvt4():
     Opt_Affichage ()
         
 
-# Mvt5 correspond au mouvement vers l'avant de la 3ème colonne.
+
 def Mvt5 ():
     global CC ,cm5
     cm5=[[[CC[0][0][0],CC[0][0][1],CC[0][0][2]],[CC[0][1][0],CC[0][1][1],CC[0][1][2]],[CC[3][2][0],CC[3][2][1],CC[3][2][2]]],
@@ -293,9 +291,7 @@ def Mvt5 ():
     CC=cm5
 
     Opt_Affichage ()
-        
-
-# Mvt6 correspond au mouvement vers l'arrière de la 3ème colonne.
+   
 def Mvt6():
    global CC,cm6
    cm6=[[[CC[0][0][0],CC[0][0][1],CC[0][0][2]],[CC[0][1][0],CC[0][1][1],CC[0][1][2]],[CC[5][0][2],CC[5][0][1],CC[5][0][0]]],
@@ -308,7 +304,7 @@ def Mvt6():
 
    Opt_Affichage ()
     
-# Mvt7 correspond au mouvement vers la gauche de la 1ère ligne.
+
 def Mvt7():
     global CC ,cm7
     cm7=[[[CC[0][0][2],CC[0][1][2],CC[0][2][2]],[CC[0][0][1],CC[0][1][1],CC[0][2][1]],[CC[0][0][0],CC[0][1][0],CC[0][2][0]]],
@@ -322,7 +318,7 @@ def Mvt7():
     Opt_Affichage ()
 
 
-# Mvt8 correspond au mouvement vers la droite de la 1ère ligne.
+
 def Mvt8():
     global CC ,cm8
     cm8=[[[CC[0][2][0],CC[0][1][0],CC[0][0][0]],[CC[0][2][1],CC[0][1][1],CC[0][0][1]],[CC[0][2][2],CC[0][1][2],CC[0][0][2]]],
@@ -336,7 +332,7 @@ def Mvt8():
     Opt_Affichage ()
         
 
- #Mvt9 correspond au mouvement vers la gauche de la 2ème ligne.
+
 def Mvt9():
     global CC ,cm9
     cm9=[[[CC[0][0][0],CC[0][0][1],CC[0][0][2]],[CC[0][1][0],CC[0][1][1],CC[0][1][2]],[CC[0][2][0],CC[0][2][1],CC[0][2][2]]],
@@ -350,7 +346,7 @@ def Mvt9():
     Opt_Affichage ()
         
 
-# Mvt 10 correspond au mouvement vers la droite de la 2ème ligne.
+
 def Mvt10():
     global CC ,cm10
     cm10=[[[CC[0][0][0],CC[0][0][1],CC[0][0][2]],[CC[0][1][0],CC[0][1][1],CC[0][1][2]],[CC[0][2][0],CC[0][2][1],CC[0][2][2]]],
@@ -364,7 +360,6 @@ def Mvt10():
     Opt_Affichage ()
     
 
-# Mvt 11 correspond au mouvement vers la gauche de la 3ème ligne.
 def Mvt11():
     global CC ,cm11
     cm11=[[[CC[0][0][0],CC[0][0][1],CC[0][0][2]],[CC[0][1][0],CC[0][1][1],CC[0][1][2]],[CC[0][2][0],CC[0][2][1],CC[0][2][2]]],
@@ -378,7 +373,7 @@ def Mvt11():
     Opt_Affichage ()
       
 
-# Mvt 12 correspond au mouvement vers la droite de la 3ème ligne.
+
 def Mvt12():
     global CC ,cm12
     cm12=[[[CC[0][0][0],CC[0][0][1],CC[0][0][2]],[CC[0][1][0],CC[0][1][1],CC[0][1][2]],[CC[0][2][0],CC[0][2][1],CC[0][2][2]]],
@@ -469,9 +464,8 @@ def Mvt18():
     Opt_Affichage ()
     
 
-#BOUTONS 
+#BUTTONS 
 
-# Création des boutons permettant les mouvements.
 
 def Boutons():
      
@@ -587,18 +581,18 @@ def Boutons_3D():
     Bmvt18_fenetre = fond.create_window(23.25*x , 108, window=Bmvt18) 
 
         
-# Définition des fléches.
+
 photo = PhotoImage(file='arrow1.png')
 photo1 = PhotoImage(file='arrowdroite.png')
 photo2 = PhotoImage(file='arrowbas.png')
 photo3 = PhotoImage(file='arrowgauche.png')
 
 
-# Création du bouton permettant de fermer la fenêtre.
+
 fermer = Button(fenetre, text="Exit", bg='SlateGray1' , bd= 10 , activebackground ='red',command=fenetre.destroy)
 fermer_fenetre = fond.create_window(40, 20, window=fermer)
 
-# Titre
+
 phrase = Label(fond, text="Rubik's cube", fg='black' , bg ='#E4E4E4' , font= "Helvetica 36 bold")
 phrase.pack()
 fond.create_window(700, 590, window=phrase)
@@ -607,7 +601,7 @@ fond.create_window(700, 590, window=phrase)
 
 ######################################################################### MAIN #############################################################################
 
-# En choisissant 0 on obtient la fenêtre graphique 2D , en choississant 1 on obtient la fenêtre graphique 3D. 
+
 
 if ag == 0 :
         AfficheGraphique (),Boutons()
