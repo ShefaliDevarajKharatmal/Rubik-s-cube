@@ -6,9 +6,9 @@ from random import *
 
 (couleur)=['red','blue','yellow','white','orange','green']
 
-# cr est l'abréviation de cube résolu.
 
-# Définition des couleurs
+
+# Définition of colours
 red='red'
 orange='orange'
 white='white'
